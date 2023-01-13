@@ -200,7 +200,7 @@ in {
       after         = [ "network.target" "minecraft-server.socket" ];
 
       serviceConfig = {
-        ExecStart = "${cfg.package}/bin/minecraft-server ${cfg.jvmOpts}";
+        ExecStart = "${getExe cfg.package} ${cfg.jvmOpts}";
         ExecStop = "${stopScript} $MAINPID";
         Restart = "always";
         User = "minecraft";
