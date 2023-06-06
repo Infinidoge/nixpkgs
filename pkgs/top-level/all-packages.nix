@@ -29454,6 +29454,7 @@ with pkgs;
 
   aseprite = callPackage ../applications/editors/aseprite { };
   aseprite-unfree = aseprite.override { unfree = true; };
+  aseprite-unfree-beta = aseprite.override { unfree = true; beta = true; };
 
   assign-lb-ip = callPackage ../applications/networking/cluster/assign-lb-ip { };
 
