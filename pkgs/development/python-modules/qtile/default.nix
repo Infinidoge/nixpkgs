@@ -5,6 +5,7 @@
 , dbus-next
 , dbus-python
 , glib
+, iwlib
 , libinput
 , libxkbcommon
 , mpd2
@@ -72,6 +73,7 @@ buildPythonPackage rec {
     pywlroots
     xkbcommon
     pulseaudio
+    iwlib
   ];
 
   buildInputs = [
