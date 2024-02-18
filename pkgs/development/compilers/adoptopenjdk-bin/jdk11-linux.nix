@@ -3,10 +3,14 @@
 let
   variant = if stdenv.hostPlatform.isMusl then "alpine_linux" else "linux";
   sources = lib.importJSON ./sources.json;
+  source = sources.openjdk11.${variant};
+
+  mkJava = type: var: {
+    "${type}-${var}" = if (source ? ${type} && source ? ${var})
+      then (import ./jdk-linux-base.nix {
+        sourcePerArch = source.${type}.${var};
+      })
+      else throw "adoptopenjdk does not support this version/architecture";
+  };
 in
-{
-  jdk-hotspot = import ./jdk-linux-base.nix { sourcePerArch = sources.openjdk11.${variant}.jdk.hotspot; };
-  jre-hotspot = import ./jdk-linux-base.nix { sourcePerArch = sources.openjdk11.${variant}.jre.hotspot; };
-  jdk-openj9 = import ./jdk-linux-base.nix { sourcePerArch = sources.openjdk11.${variant}.jdk.openj9; };
-  jre-openj9 = import ./jdk-linux-base.nix { sourcePerArch = sources.openjdk11.${variant}.jre.openj9; };
-}
+(mkJava "jdk" "hotspot") // (mkJava "jre" "hotspot") // (mkJava "jdk" "openj9") // (mkJava "jre" "openj9")
