@@ -16178,6 +16178,7 @@ with pkgs;
   jdk20 = openjdk20;
   jdk20_headless = openjdk20_headless;
 
+  openjdk21-bootstrap = javaPackages.compiler.openjdk21-bootstrap;
   openjdk21 = javaPackages.compiler.openjdk21;
   openjdk21_headless = javaPackages.compiler.openjdk21.headless;
   jdk21 = openjdk21;
