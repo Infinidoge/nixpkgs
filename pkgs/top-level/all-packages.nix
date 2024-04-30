@@ -15231,31 +15231,31 @@ with pkgs;
   semeru-bin = semeru-bin-21;
   semeru-jre-bin = semeru-jre-bin-21;
 
-  adoptopenjdk-bin-17-packages-linux = import ../development/compilers/adoptopenjdk-bin/jdk17-linux.nix { inherit stdenv lib; };
-  adoptopenjdk-bin-17-packages-darwin = import ../development/compilers/adoptopenjdk-bin/jdk17-darwin.nix { inherit lib; };
+  #adoptopenjdk-bin-17-packages-linux = import ../development/compilers/adoptopenjdk-bin/jdk17-linux.nix { inherit stdenv lib; };
+  #adoptopenjdk-bin-17-packages-darwin = import ../development/compilers/adoptopenjdk-bin/jdk17-darwin.nix { inherit lib; };
 
-  adoptopenjdk-hotspot-bin-16 = if javaPackages.compiler.adoptopenjdk-16 ? jdk-hotspot then javaPackages.compiler.adoptopenjdk-16.jdk-hotspot else throw "adoptopenjdk-bin not supported on this platform";
-  adoptopenjdk-jre-hotspot-bin-16 = if javaPackages.compiler.adoptopenjdk-16 ? jre-hotspot then javaPackages.compiler.adoptopenjdk-16.jre-hotspot else throw "adoptopenjdk-bin not supported on this platform";
-  adoptopenjdk-openj9-bin-16 = if javaPackages.compiler.adoptopenjdk-16 ? jdk-openj9 then javaPackages.compiler.adoptopenjdk-16.jdk-openj9 else throw "adoptopenjdk-bin not supported on this platform";
-  adoptopenjdk-jre-open-bin-16 = if javaPackages.compiler.adoptopenjdk-16 ? jre-openj9 then javaPackages.compiler.adoptopenjdk-16.jre-openj9 else throw "adoptopenjdk-bin not supported on this platform";
+  #adoptopenjdk-hotspot-bin-16 = javaPackages.compiler.adoptopenjdk-16.jdk-hotspot;
+  #adoptopenjdk-jre-hotspot-bin-16 = jre-hotspot then javaPackages.compiler.adoptopenjdk-16.jre-hotspot;
+  #adoptopenjdk-openj9-bin-16 = throw "openj9 adoptopenjdk-bin has been removed";
+  #adoptopenjdk-jre-openj9-bin-16 = throw "openj9 adoptopenjdk-bin has been removed";
 
-  adoptopenjdk-hotspot-bin-15 = if javaPackages.compiler.adoptopenjdk-15 ? jdk-hotspot then javaPackages.compiler.adoptopenjdk-15.jdk-hotspot else throw "adoptopenjdk-bin not supported on this platform";
-  adoptopenjdk-jre-hotspot-bin-15 = if javaPackages.compiler.adoptopenjdk-15 ? jre-hotspot then javaPackages.compiler.adoptopenjdk-15.jre-hotspot else throw "adoptopenjdk-bin not supported on this platform";
-  adoptopenjdk-openj9-bin-15 = if javaPackages.compiler.adoptopenjdk-15 ? jdk-openj9 then javaPackages.compiler.adoptopenjdk-15.jdk-openj9 else throw "adoptopenjdk-bin not supported on this platform";
-  adoptopenjdk-jre-open-bin-15 = if javaPackages.compiler.adoptopenjdk-15 ? jre-openj9 then javaPackages.compiler.adoptopenjdk-15.jre-openj9 else throw "adoptopenjdk-bin not supported on this platform";
+  #adoptopenjdk-hotspot-bin-15 = javaPackages.compiler.adoptopenjdk-15.jdk-hotspot;
+  #adoptopenjdk-jre-hotspot-bin-15 = jre-hotspot then javaPackages.compiler.adoptopenjdk-15.jre-hotspot;
+  #adoptopenjdk-openj9-bin-15 = throw "openj9 adoptopenjdk-bin has been removed";
+  #adoptopenjdk-jre-openj9-bin-15 = throw "openj9 adoptopenjdk-bin has been removed";
 
-  adoptopenjdk-hotspot-bin-11 = if javaPackages.compiler.adoptopenjdk-11 ? jdk-hotspot then javaPackages.compiler.adoptopenjdk-11.jdk-hotspot else throw "adoptopenjdk-bin not supported on this platform";
-  adoptopenjdk-jre-hotspot-bin-11 = if javaPackages.compiler.adoptopenjdk-11 ? jre-hotspot then javaPackages.compiler.adoptopenjdk-11.jre-hotspot else throw "adoptopenjdk-bin not supported on this platform";
-  adoptopenjdk-openj9-bin-11 = if javaPackages.compiler.adoptopenjdk-11 ? jdk-openj9 then javaPackages.compiler.adoptopenjdk-11.jdk-openj9 else throw "adoptopenjdk-bin not supported on this platform";
-  adoptopenjdk-jre-open-bin-11 = if javaPackages.compiler.adoptopenjdk-11 ? jre-openj9 then javaPackages.compiler.adoptopenjdk-11.jre-openj9 else throw "adoptopenjdk-bin not supported on this platform";
+  #adoptopenjdk-hotspot-bin-11 = javaPackages.compiler.adoptopenjdk-11.jdk-hotspot;
+  #adoptopenjdk-jre-hotspot-bin-11 = jre-hotspot then javaPackages.compiler.adoptopenjdk-11.jre-hotspot;
+  #adoptopenjdk-openj9-bin-11 = throw "openj9 adoptopenjdk-bin has been removed";
+  #adoptopenjdk-jre-openj9-bin-11 = throw "openj9 adoptopenjdk-bin has been removed";
 
-  adoptopenjdk-hotspot-bin-8 = if javaPackages.compiler.adoptopenjdk-8 ? jdk-hotspot then javaPackages.compiler.adoptopenjdk-8.jdk-hotspot else throw "adoptopenjdk-bin not supported on this platform";
-  adoptopenjdk-jre-hotspot-bin-8 = if javaPackages.compiler.adoptopenjdk-8 ? jre-hotspot then javaPackages.compiler.adoptopenjdk-8.jre-hotspot else throw "adoptopenjdk-bin not supported on this platform";
-  adoptopenjdk-openj9-bin-8 = if javaPackages.compiler.adoptopenjdk-8 ? jdk-openj9 then javaPackages.compiler.adoptopenjdk-8.jdk-openj9 else throw "adoptopenjdk-bin not supported on this platform";
-  adoptopenjdk-jre-open-bin-8 = if javaPackages.compiler.adoptopenjdk-8 ? jre-openj9 then javaPackages.compiler.adoptopenjdk-8.jre-openj9 else throw "adoptopenjdk-bin not supported on this platform";
+  #adoptopenjdk-hotspot-bin-8 = javaPackages.compiler.adoptopenjdk-8.jdk-hotspot;
+  #adoptopenjdk-jre-hotspot-bin-8 = jre-hotspot then javaPackages.compiler.adoptopenjdk-8.jre-hotspot;
+  #adoptopenjdk-openj9-bin-8 = throw "openj9 adoptopenjdk-bin has been removed";
+  #adoptopenjdk-jre-openj9-bin-8 = throw "openj9 adoptopenjdk-bin has been removed";
 
-  adoptopenjdk-bin = adoptopenjdk-hotspot-bin-11;
-  adoptopenjdk-jre-bin = adoptopenjdk-jre-hotspot-bin-11;
+  #adoptopenjdk-bin = adoptopenjdk-hotspot-bin-11;
+  #adoptopenjdk-jre-bin = adoptopenjdk-jre-hotspot-bin-11;
 
   adoptopenjdk-icedtea-web = callPackage ../development/compilers/adoptopenjdk-icedtea-web {
     jdk = jdk8;
@@ -16145,7 +16145,7 @@ with pkgs;
 
   hugs = callPackage ../development/interpreters/hugs { };
 
-  inherit (javaPackages) openjfx11 openjfx15 openjfx17 openjfx19 openjfx20 openjfx21 openjfx22;
+  inherit (javaPackages) openjfx11 openjfx17 openjfx19 openjfx20 openjfx21 openjfx22;
   openjfx = openjfx17;
 
   openjdk8-bootstrap = javaPackages.compiler.openjdk8-bootstrap;
